@@ -1,9 +1,9 @@
 pipeline {
     agent any
      environment {
-       IMAGE = readMavenPom().getArtifactId()
-       VERSION = readMavenPom().getVersion()
-       VERSION_IMAGE="v${VERSION}"
+       //IMAGE = readMavenPom().getArtifactId()
+       //VERSION = readMavenPom().getVersion()
+       //VERSION_IMAGE="v${VERSION}"
        DOCKER_REGISTRY='romymendez'
        DOCKER_HUB_SECRETS=credentials('dockerhub')
 
@@ -13,6 +13,7 @@ pipeline {
 			steps {
             checkout scm
             echo '** Dependencias/ Versiones **'
+				echo "ls"
 				sh "mvn -version"
 			}
 		}
