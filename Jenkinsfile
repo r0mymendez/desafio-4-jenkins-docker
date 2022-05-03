@@ -21,8 +21,6 @@ pipeline {
 	    steps {
                      checkout scm
                      echo '** Dependencias/ Versiones **'
-		      def mvnHome = tool name: 'Apache Maven 3.6.0', type: 'maven'
-                      sh "${mvnHome}/bin/mvn -B -DskipTests clean package"
 		      sh "mvn -version"
 			}
 		}
