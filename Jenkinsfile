@@ -9,7 +9,7 @@ pipeline {
 
     }
 	tools{
-		maven '3.8.5'
+		maven
 	}
     stages {
 	    stage('checkout github') {
