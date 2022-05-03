@@ -8,6 +8,10 @@ pipeline {
        DOCKER_HUB_SECRETS=credentials('dockerhub')
 
     }
+    tools { 
+        maven 'Maven 3.8.5' 
+        jdk 'jdk8' 
+    }
     stages {
 	    stage('checkout github') {
 			steps {
