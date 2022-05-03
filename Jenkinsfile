@@ -9,12 +9,19 @@ pipeline {
 
     }
     stages {
-		stage('depenencias y versiones') {
+	    stage('checkout github') {
 			steps {
-            checkout scm
-            echo '** Dependencias/ Versiones **'
-				echo "ls"
-				sh "mvn -version"
+				echo 'Descargando codigo de SCM'
+				sh 'rm -rf *'
+				checkout scm
+			}
+		}
+	    
+	  stage('depenencias y versiones') {
+	    steps {
+                     checkout scm
+                     echo '** Dependencias/ Versiones **'
+		      sh "mvn -version"
 			}
 		}
 		stage('Compilando Java') {
